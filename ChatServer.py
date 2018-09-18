@@ -7,7 +7,7 @@ def idCLiente():        #Contador para el id, devuelve los id (0,1,2,3,...)
     id = id+1
     return id
 
-#def parsearMsje (mensaje):
+def parsearMsje (mensaje):
     #para obtener el id!? porque eñ mesje esta formado por 2 cositas
 
 def enviarMsje(id, mensaje):
