@@ -18,4 +18,4 @@ message = input('Mensaje:')
 clientSocket.sendto(bytes(message,'utf-8'),(serverName, serverPort))
 
 #print (modifiedMessage)
-#clientSocket.close()
+clientSocket.close()
