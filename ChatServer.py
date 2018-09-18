@@ -1,4 +1,6 @@
 from socket import *
+import GaboProtocol as gp
+
 id = 0                  #Empieza en id=0
 dicCLientes={}          #Diccionario de los clientes, contenido --> clave : valor --> Para nuestro caso es --> id : clientAddress.
 #Va a ser --> dicCLientes={1:Adress1, 2:Adress2, ...}
