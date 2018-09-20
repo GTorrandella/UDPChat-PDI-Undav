@@ -1,6 +1,10 @@
 from socket import *
 import GaboProtocol as gp
 
+
+serverName = 'localhost'
+serverPort = 31000
+
 id = 0                  #Empieza en id=0
 dicCLientes={}          #Diccionario de los clientes, contenido --> clave : valor --> Para nuestro caso es --> id : clientAddress.
 #Va a ser --> dicCLientes={1:Adress1, 2:Adress2, ...}
@@ -8,9 +12,6 @@ def idCLiente():        #Contador para el id, devuelve los id (0,1,2,3,...)
     global id
     id = id+1
     return id
-
-#def parsearMsje (mensaje):
-    #para obtener el id!? porque eñ mesje esta formado por 2 cositas
 
 def enviarMsje(id, mensaje):
    serverSocket.sendto(bytes(str(mensaje),'utf-8'), (dicCLientes.get(identificador)))
@@ -21,7 +22,7 @@ serverSocket.bind(('', serverPort))     #Escucha todas las IP que tiene (por el 
 print ("El servidor esta preparado para recibir")
 while 1:
     message, clientAddress = serverSocket.recvfrom(2048)    #leeme los 2048 bytes del buffer del socket y la parte de datos del paquete lo pone en message y la dirección del cliente en clientAddress.
-    modifiedMessage = message.upper()       #lo pasamos a mayuscula
+    modifiedMessage = message.upper()                       #lo pasamos a mayuscula.
 
     # SI la dirección del cliente coincide con su id en el diccionario, es que el tipo está logueado y le manda el mensaje a ese.
     if clientAddress in dicCLientes.values():
