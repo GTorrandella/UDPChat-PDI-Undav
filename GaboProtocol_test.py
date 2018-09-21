@@ -25,9 +25,10 @@ class TestCase(unittest.TestCase):
         self.assertEqual(s2, b2)
         
     def test_sendMessage(self):
-        
+        pass
     
     def test_recvMessage(self):
-
+        pass
+    
 if __name__ == '__main__':
     unittest.main()
